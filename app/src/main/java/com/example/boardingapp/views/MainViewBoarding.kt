@@ -1,6 +1,7 @@
 package com.example.boardingapp.views
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -38,7 +39,15 @@ fun MainViewBoarding ( navController: NavController, store: StoreBoarding ) {
         PageData (
             R.raw.page3,
             "Fin de Boarding",
-            "Esta e sla página final del Boarding y ya debe aparecer el botón"
+            "Esta es la página final del Boarding y ya debe aparecer el botón"
+        )
+    )
+
+    items.add (
+        PageData (
+            R.raw.page4,
+            "Página Extra de Boarding",
+            "Esta es una página extra del Boarding"
         )
     )
 
@@ -54,6 +63,7 @@ fun MainViewBoarding ( navController: NavController, store: StoreBoarding ) {
         pagerState = pagerState,
         modifier = Modifier
             .fillMaxWidth()
+            .fillMaxHeight()
             .background ( Color.White ),
         navController = navController,
         store = store

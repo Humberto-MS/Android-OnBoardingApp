@@ -27,7 +27,7 @@ import com.google.accompanist.pager.PagerState
 @OptIn(ExperimentalPagerApi::class)
 @Composable
 fun OnBoardingPager (item: List<PageData>, pagerState: PagerState, modifier: Modifier, navController: NavController, store: StoreBoarding ) {
-    Box ( modifier = Modifier ) {
+    Box ( modifier = modifier ) {
         Column ( horizontalAlignment = Alignment.CenterHorizontally ) {
             HorizontalPager ( state = pagerState ) {
                 page ->
