@@ -9,6 +9,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.boardingapp.dataStore.StoreBoarding
 import com.example.boardingapp.views.HomeView
 import com.example.boardingapp.views.MainViewBoarding
+import com.example.boardingapp.views.SplashScreen
 
 @Composable
 fun NavManager() {
@@ -19,13 +20,16 @@ fun NavManager() {
 
     NavHost (
         navController = navController,
-        startDestination = if ( store.value == true ) "home" else "onBoarding"
+        startDestination = if ( store.value == true ) "home" else "Splash"
     ) {
         composable ( route = "onBoarding" ) {
             MainViewBoarding ( navController = navController, store = dataStore )
         }
         composable ( route = "home" ) {
             HomeView ( navController = navController )
+        }
+        composable ( route = "Splash" ) {
+            SplashScreen ( navController = navController, store.value )
         }
     }
 }
